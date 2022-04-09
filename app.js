@@ -46,9 +46,9 @@ app.get('/plants/environment',plantController.GetByEnv);
 app.get('/plants/size',plantController.GetBySize);
 //Function to add plant
 app.post('/plant/add', plantController.Create);
-app.get('/plant/delete/:id', plantController.DeleteById);
+app.delete('/plant/delete/:id', plantController.DeleteById);
 app.get('/plant/updating/:id', plantController.GetupdateId);
-app.post('/plant/update/:id', plantController.UpdateElement);
+app.get('/plant/update/:id', plantController.UpdateElement);
 
 //all the addplant.ejs add funciton
 app.get('/add', function(req,res){

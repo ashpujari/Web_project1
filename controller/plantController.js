@@ -124,9 +124,6 @@ module.exports={
             "Quantity":req.body.Quantity
         }
 
-        
-
-
         Plant.findOneAndUpdate({Plant_Id : req.params.id}, function(err, results){
             
             if(err) throw err;

@@ -1,16 +1,51 @@
 <!DOCTYPE html>
-<!--Created By: William Charles See Ong | Student Id: C0797740-->
+<!--Created By: William Charles See Ong | Student Id: C0797740
+The id should be unique-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add</title>
+    <script>
+      function validateForm() {
+        let id = document.forms["plantForm"]["Plant_Id"].value;
+        let name = document.forms["plantForm"]["Plant_Name"].value;
+        let description = document.forms["plantForm"]["Description"].value;
+        let price = document.forms["plantForm"]["Price"].value;
+        let quantity = document.forms["plantForm"]["Quantity"].value;
+        
+        if (id == "") {
+          alert("Id should be filled out");
+          return false;
+        }
+        if (name == "") {
+          alert("Plant name should be filled out");
+          return false;
+        }
+
+        if (description == "") {
+          alert("Description should be filled out");
+          return false;
+        }
+
+        if (price == "") {
+          alert("Price should be filled out");
+          return false;
+        }
+
+        if (quantity == "") {
+          alert("Quantity should be filled out");
+          return false;
+        }
+      }
+        
+      </script>
 </head>
 <body>
   <h1>Add Plants</h1>  
-  <form action="/plant/add" method="POST">
-      Plant Id: <input type="text" name="Plant_Id" id="Plant_Id" /> </br>
+  <form name = "plantForm" action="/plant/add" method="POST" onsubmit="return validateForm()">
+      Plant Id: <input type="number" name="Plant_Id" id="Plant_Id" /> </br>
       Plant Name:<input type="text" name="Plant_Name" id="Plant_Name" /> </br>
       Description: <input type="text" name="Description" id="Description" /> </br>
       Care Level:  
